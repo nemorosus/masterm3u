@@ -1,0 +1,14 @@
+
+version: '3.8'
+
+services:
+  m3u-editor:
+    build: .
+    container_name: m3u-editor
+    ports:
+      - "36400:80"
+    environment:
+      - TZ=Europe/Skopje
+    volumes:
+      - ./config:/var/www/config
+    restart: unless-stopped
